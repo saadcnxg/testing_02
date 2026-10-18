@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AnatomyLab | Explore the Human Body</title>
+  <meta name="description" content="An interactive guide to human body anatomy: systems, organs, facts and a quiz.">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#home" class="logo">🫀 Anatomy<span>Lab</span></a>
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="#home" class="nav__link">Home</a>
+        <a href="#map" class="nav__link">Body Map</a>
+        <a href="#systems" class="nav__link">Systems</a>
+        <a href="#quiz" class="nav__link">Quiz</a>
+      </nav>
+      <div class="header__actions">
+        <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+        <button class="icon-btn nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home" data-section>
+      <div class="container hero__inner">
+        <p class="eyebrow">Interactive anatomy guide</p>
+        <h1>Discover how the <em>human body</em> works</h1>
+        <p class="hero__text">Explore ten major body systems, click through an interactive body map, learn key organs and facts, then test yourself with a quiz.</p>
+        <div class="hero__buttons">
+          <a href="#systems" class="btn btn--primary">Browse systems</a>
+          <a href="#map" class="btn btn--ghost">Open body map</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-label="Key numbers">
+      <div class="container">
+        <div class="stats" id="stats"></div>
+      </div>
+    </section>
+
+    <section class="section" id="map" data-section>
+      <div class="container">
+        <h2 class="section__title">Interactive Body Map</h2>
+        <p class="section__subtitle">Hover or tap a region to explore the system that lives there.</p>
+        <div class="map-layout">
+          <div class="map-figure" id="body-map"></div>
+          <aside class="map-info" id="map-info" aria-live="polite">
+            <h3>Select a region</h3>
+            <p>Hover over the body to see which system it represents, then click to open details.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="systems" data-section>
+      <div class="container">
+        <h2 class="section__title">Body Systems</h2>
+        <p class="section__subtitle">Ten systems work together to keep you alive and well.</p>
+        <div class="toolbar">
+          <input type="search" id="system-search" class="search" placeholder="Search systems or organs..." aria-label="Search systems">
+          <div class="filters" id="filters">
+            <button class="chip is-active" data-filter="all">All</button>
+            <button class="chip" data-filter="structure">Structure</button>
+            <button class="chip" data-filter="control">Control</button>
+            <button class="chip" data-filter="transport">Transport</button>
+            <button class="chip" data-filter="processing">Processing</button>
+            <button class="chip" data-filter="defense">Defense</button>
+          </div>
+        </div>
+        <div class="grid" id="systems-grid"></div>
+        <p class="empty" id="systems-empty" hidden>No systems match your search.</p>
+      </div>
+    </section>
+
+    <section class="section" id="quiz" data-section>
+      <div class="container container--narrow">
+        <h2 class="section__title">Test Your Knowledge</h2>
+        <p class="section__subtitle">Answer a few questions about human anatomy.</p>
+        <div class="quiz" id="quiz-box"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> AnatomyLab. Educational content only, not medical advice.</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="modal" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal__close" data-close aria-label="Close">✕</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

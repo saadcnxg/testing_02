@@ -1,0 +1,85 @@
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.4rem;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  font-weight: 700;
+  transition: transform 0.15s, background 0.2s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn--primary { background: var(--primary); color: #fff; }
+.btn--primary:hover { background: var(--primary-dark); }
+.btn--ghost { border-color: var(--border); background: var(--surface); }
+
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.stat__value { font-size: 2.4rem; font-weight: 800; color: var(--primary); }
+.stat__label { color: var(--muted); font-size: 0.9rem; }
+
+.search {
+  flex: 1 1 260px;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+.filters { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.chip {
+  padding: 0.4rem 0.95rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.chip.is-active { background: var(--text); color: var(--bg); border-color: var(--text); }
+
+.card {
+  text-align: left;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--accent);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+}
+.card:hover { transform: translateY(-4px); }
+.card__icon { font-size: 2.2rem; margin-bottom: 0.5rem; }
+.card__title { font-size: 1.2rem; margin-bottom: 0.35rem; }
+.card__text { color: var(--muted); font-size: 0.95rem; margin-bottom: 0.75rem; }
+.card__tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.empty { text-align: center; color: var(--muted); padding: 2rem 0; }
+
+.map-figure svg { width: 100%; height: auto; filter: drop-shadow(var(--shadow)); }
+.body-part { fill: var(--surface); stroke: var(--border); stroke-width: 2; cursor: pointer; transition: fill 0.2s; }
+.body-part:hover, .body-part:focus-visible, .body-part.is-active { fill: var(--accent); outline: none; }
+.body-organ { stroke: var(--surface); stroke-width: 1.5; cursor: pointer; opacity: 0.9; transition: transform 0.2s; transform-box: fill-box; transform-origin: center; }
+.body-organ:hover, .body-organ:focus-visible { transform: scale(1.3); outline: none; }
+
+.map-info {
+  padding: 2rem;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--accent);
+  min-height: 180px;
+}
+.map-info h3 { font-size: 1.5rem; }
+.map-info p { color: var(--muted); }
