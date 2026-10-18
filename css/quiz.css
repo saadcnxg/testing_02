@@ -1,29 +1,28 @@
 .quiz {
-  padding: 2.25rem;
-  border-radius: 16px;
+  padding: 2rem;
+  border-radius: var(--radius);
   background: var(--surface);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
 }
-.quiz__progress { height: 6px; border-radius: 999px; background: var(--bg-alt); overflow: hidden; margin-bottom: 1.5rem; }
-.quiz__bar { height: 100%; background: var(--primary); border-radius: 999px; transition: width 0.3s; }
-.quiz__count { color: var(--muted); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
-.quiz__question { font-size: 1.4rem; margin: 0.4rem 0 1.5rem; }
-.quiz__options { display: grid; gap: 0.65rem; }
+.quiz__progress { height: 6px; border-radius: 999px; background: var(--bg-alt); overflow: hidden; margin-bottom: 1.25rem; }
+.quiz__bar { height: 100%; background: var(--primary); transition: width 0.3s; }
+.quiz__count { color: var(--muted); font-size: 0.85rem; font-weight: 600; }
+.quiz__question { font-size: 1.35rem; margin: 0.25rem 0 1.25rem; }
+.quiz__options { display: grid; gap: 0.6rem; }
 .quiz__option {
   text-align: left;
-  padding: 0.9rem 1.1rem;
-  border-radius: 10px;
-  border: 1px solid var(--border);
+  padding: 0.85rem 1rem;
+  border-radius: 2px;
+  border: 2px solid var(--border);
   background: var(--bg);
-  font-weight: 500;
-  transition: border-color 0.2s, background 0.2s;
+  transition: border-color 0.2s;
 }
-.quiz__option:hover:not(:disabled) { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 6%, var(--bg)); }
+.quiz__option:hover:not(:disabled) { border-color: var(--primary); }
 .quiz__option:disabled { cursor: default; }
-.quiz__option.is-correct { border-color: #1f9d63; background: color-mix(in srgb, #1f9d63 14%, var(--bg)); }
-.quiz__option.is-wrong { border-color: #d4374a; background: color-mix(in srgb, #d4374a 12%, var(--bg)); }
-.quiz__feedback { margin-top: 1.1rem; color: var(--muted); font-size: 0.95rem; }
+.quiz__option.is-correct { border-color: #22a45d; background: color-mix(in srgb, #22a45d 15%, var(--bg)); }
+.quiz__option.is-wrong { border-color: #d9334a; background: color-mix(in srgb, #d9334a 15%, var(--bg)); }
+.quiz__feedback { margin-top: 1rem; color: var(--muted); }
 .quiz__actions { margin-top: 1.25rem; }
-.quiz__result { text-align: center; padding: 1rem 0; }
-.quiz__score { font-size: 3.5rem; font-weight: 800; letter-spacing: -0.03em; color: var(--primary); }
+.quiz__result { text-align: center; }
+.quiz__score { font-size: 3rem; font-weight: 800; color: var(--primary); }
